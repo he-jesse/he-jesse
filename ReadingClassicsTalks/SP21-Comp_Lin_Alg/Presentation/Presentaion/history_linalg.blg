@@ -1,0 +1,18 @@
+[1] Config.pm:304> INFO - This is Biber 2.12
+[1] Config.pm:307> INFO - Logfile is 'history_linalg.blg'
+[48] biber-MSWIN32:315> INFO - === 
+[93] Biber.pm:371> INFO - Reading 'history_linalg.bcf'
+[226] Biber.pm:889> INFO - Found 6 citekeys in bib section 0
+[246] Biber.pm:4093> INFO - Processing section 0
+[266] Biber.pm:4254> INFO - Looking for bibtex format file 'history_linalg.bib' for section 0
+[277] bibtex.pm:1523> INFO - LaTeX decoding ...
+[300] bibtex.pm:1340> INFO - Found BibTeX data source 'history_linalg.bib'
+[310] Utils.pm:193> WARN - month field 'December' in entry 'maa' is not an integer - this will probably not sort properly.
+[314] Utils.pm:193> WARN - month field 'April' in entry 'roots' is not an integer - this will probably not sort properly.
+[350] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[350] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[350] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[350] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[359] bbl.pm:636> INFO - Writing 'history_linalg.bbl' with encoding 'UTF-8'
+[363] bbl.pm:739> INFO - Output to history_linalg.bbl
+[370] Biber.pm:110> INFO - WARNINGS: 2

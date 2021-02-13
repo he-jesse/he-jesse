@@ -1,0 +1,1 @@
+data ⊤ : Set where  tt : ⊤
