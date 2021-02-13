@@ -437,6 +437,21 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Eigenvalue algorithms}
+
+    There are a number of algorithms to find the spectrum of a matrix:
+
+    \pause
+    The naive algorithm is to simply expand the characteristic polynomial $p(\lambda) = \det(T - \lambda I)$ and solve for $\lambda$.
+
+    \pause
+    Some algorithms are iterative, producing a sequence of values that converges to an eigenvalue, like Jacobi's algorithm, power iteration, or the QR algorithm.
+
+    \pause
+    Others involve direct calculation, but there are no general (non-naive) algorithms to directly calculate the spectrum of an arbitrary matrix.
+\end{frame}
+
+\begin{frame}
     \frametitle{Generalized eigenspaces}
 
     \begin{definition}
@@ -472,6 +487,24 @@
             0 & 0 & 0 & \ldots & \lambda_i
         \end{pmatrix}
     \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Finding Jordan normal form}
+
+    The algorithm to find the Jordan normal form of a linear transformation $T$ (assuming the characteristic polynomial splits) is, at a high level, as follows:
+
+    \pause
+    Calculate $\Spec(T)$.
+
+    \pause
+    For each $\lambda \in \Spec(T)$, calculate the associated generalized eigenspace $E_\lambda$.
+
+    \pause
+    Start with a basis for $E_\lambda$ and iteratively find a Jordan basis for $E_\lambda$.
+
+    \pause
+    Gather all the Jordan bases for each $E_\lambda$ into a Jordan basis for $T$.
 \end{frame}
 
 \begin{frame}
