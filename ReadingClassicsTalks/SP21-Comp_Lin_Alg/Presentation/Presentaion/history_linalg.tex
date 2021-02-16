@@ -452,6 +452,24 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Power Iteration}
+
+    One of the earliest computational algorithms for identifying eigenvalues is power iteration (sometimes von Mises algorithm).
+
+    \pause
+    Given a matrix $A : \C^n \longrightarrow \C^n$, generate a random vector $b_0 = (z_1, \ldots, z_n)$ and repeatedly apply $T$, then renormalize:
+    \[
+        b_{k+1} = \frac{T b_k}{\norm{T b_k}}
+    \]
+    \pause
+    Then if $A$ has a ``largest'' eigenvalue $\lambda$ with (unit) eigenvector $v$ and $\langle b_0, v \rangle > 0$,
+    the sequence $(b_k)$ will converge to $v$, and the sequence of Rayleigh quotients
+    \[
+        \mu_k = \frac{b_k^* A_k b_k}{\norm{b_k}} \xrightarrow[k\to\infty]{} \lambda.
+    \]
+\end{frame}
+
+\begin{frame}
     \frametitle{Generalized eigenspaces}
 
     \begin{definition}
