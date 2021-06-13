@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate, parskip, hyperref}
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \usepackage{tikz-cd}
 \urlstyle{same}
 
@@ -29,20 +29,14 @@
 \begin{frame}
     \frametitle{Definitions}
     
-    \begin{definition}
-        A \emph{total preorder} or \emph{preference order} $\leq$ on a set $X$ is a binary relation such that for all $x, y, z \in X$,
-        \begin{enumerate}
-            \item If $x \leq y$ and $y \leq z$ then $x \leq z$
-            \item $x \leq y$ or $y \leq x$ (and hence $x \leq x$)
-        \end{enumerate}
-    \end{definition}
-
-    \pause
     Let $A$ be a set of $M \geq 3$ alternatives, $A = \{a_1, a_2, \dots, a_M\}$ and let $V = \{1, 2, \dots, N\}$ be a set of $N$ voters.
 
     \pause
-    Then denote by $\mathcal{L}(A)$ the set of preference orders on $A$. Each voter $v \in V$ has an associated preference ordering $\leq_v$,
-    and a \emph{preference profile} (or \emph{situation}) $P = (\leq_1, \dots, \leq_N) \in \mathcal{L}(A)^V$ is an $N$-tuple of preference orders.
+    Denote by $\mathcal{L}(A)$ the set of linear orders (\emph{preference orders}) on $A$.
+
+    \pause
+    Each voter $v \in V$ has an associated preference ordering $\leq_v$, and a \emph{preference profile} (or \emph{situation})
+    $P = (\leq_1, \dots, \leq_N) \in \mathcal{L}(A)^V$ is an $N$-tuple of preference orders.
 
     \pause
     A \emph{social welfare function} is a function $F : \mathcal{L}(A)^V \to \mathcal{L}(A)$. We denote the resulting ordering by $\leq_{F(P)}$,
@@ -283,8 +277,10 @@
 
     \begin{theorem}[Uniqueness of winning ultrafilters]
         \begin{enumerate}
+            \pause
             \item For each Pareto IIA social welfare function $F$ there is a unique ultrafilter $\mathcal{U}_F$ such that for each $U \in \mathcal{U}_F$,
             each $a, b \in A$, and any preference profile $P$, if $\{u : a \leq_{u} b\} \in \mathcal{U}_F$ then $a \leq_{F(P)} b$.
+            \pause
             \item For each ultrafilter $\mathcal{U}_F$ on $V$ there exists such an $F$.
         \end{enumerate}
     \end{theorem}
@@ -294,11 +290,13 @@
 \begin{frame}
     \frametitle{Some more black boxes}
     
+    \pause
     \begin{fact}[Fact 1]
         For any atomless measure space $(X, \mathcal{M}, \mu)$, for all $\varepsilon > 0$, there is a finite partition $X = \bigsqcup_{i=1}^r C_i$,
         such that each $C_i \in \mathcal{M}$  and $\mu(C_i) < \varepsilon$.
     \end{fact}
 
+    \pause
     \begin{fact}[Fact 2]
         Let $\mathcal{U}$ be an ultrafilter on a set $X$. For any finite partition $X = \bigsqcup_{i=1}^r C_i$, exactly one $C_i \in \mathcal{U}$.
     \end{fact}
@@ -310,11 +308,13 @@
 
     In the case where $V$ is infinite, consider an atomless measure space $(V, \mathcal{V}, \lambda)$.
 
+    \pause
     \begin{theorem}
         For any $\varepsilon > 0$ there exists $C \in \mathcal{V}$, $C \neq \varnothing$, $\lambda(C) < \varepsilon$ such that for any $a, b \in A$
         and any situation $P$, if $\{v : a \leq_c b\} \subseteq C$ then $a \leq_{F(P)} b$.
     \end{theorem}
 
+    \pause
     \begin{proof}
         Apply the first fact to $(V, \mathcal{V}, \lambda)$. Then we have a partition $X = \bigsqcup_{i=1}^r C_i$ such that each $C_i \in \mathcal{M}$
         and $\mu(C_i) < \varepsilon$. Take the ultrafilter $\mathcal{U}_F$ guaranteed by the uniqueness of winning ultrafilters and apply the second fact.
@@ -328,6 +328,7 @@
     Consider $V$ as a discrete topological space and suppose the set $A$ of alternatives is finite. Then $\mathcal{L}(A)$ is finite, so it is also
     a discrete topological space.
 
+    \pause
     We have the following commutative diagram:
     \begin{center}
         \begin{tikzcd}[ampersand replacement=\&]
@@ -335,8 +336,10 @@
             \& \mathcal{L}(A)                                        
         \end{tikzcd}
     \end{center}
+    \pause
     This is the universal property for $\mathit{\beta V}$, the Stone-\v{C}ech compactification of $V$.
 
+    \pause
     Note that $V$ is dense in $\mathit{\beta V}$.
 
 \end{frame}
@@ -359,10 +362,18 @@
     \end{theorem}
 
     \begin{proof}
-        We know that there is a unique winning ultrafilter $\mathcal{U}_F$. By the previous fact, $\mathcal{U}_F$ has a unique limit $\hat{v} \in
-        \mathit{\beta V}$. Then $\mathit{\beta P}(\hat{v}) = \mathcal{U_F}\lim_v P(v)$. Since $\mathcal{L}(A)$ is discrete, there is some
-        $U \in \mathcal{U}_F$ with $P(U) = \mathit{\beta P}(\hat{v})$. By the properties of $\mathcal{U}_F$, $U$ is a winning set, and hence
-        $\hat{v}$ dictates $F$.
+        \pause
+        We know that there is a unique winning ultrafilter $\mathcal{U}_F$.
+
+        \pause
+        By the previous fact, $\mathcal{U}_F$ has a unique limit $\hat{v} \in \mathit{\beta V}$.
+        
+        \pause
+        Then $\mathit{\beta P}(\hat{v}) = \mathcal{U_F}\lim_v P(v)$. Since $\mathcal{L}(A)$ is discrete, there is some
+        $U \in \mathcal{U}_F$ with $P(U) = \mathit{\beta P}(\hat{v})$.
+        
+        \pause
+        By the properties of $\mathcal{U}_F$, $U$ is a winning set, and hence $\hat{v}$ dictates $F$.
     \end{proof}
 
 \end{frame}
