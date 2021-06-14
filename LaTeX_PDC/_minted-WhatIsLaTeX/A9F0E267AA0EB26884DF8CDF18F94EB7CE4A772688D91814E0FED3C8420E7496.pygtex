@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sb}{\PYGZbs{}[}
+\PYG{n+nb}{    }\PYG{n+nv}{\PYGZbs{}oint}\PYG{n+nb}{\PYGZus{}\PYGZob{}}\PYG{n+nv}{\PYGZbs{}partial}\PYG{n+nb}{ R\PYGZcb{} }\PYG{n+nv}{\PYGZbs{}mathbf}\PYG{n+nb}{\PYGZob{}F\PYGZcb{} }\PYG{n+nv}{\PYGZbs{},}\PYG{n+nb}{d}\PYG{n+nv}{\PYGZbs{}mathbf}\PYG{n+nb}{\PYGZob{}x\PYGZcb{}}
+\PYG{n+nb}{    }\PYG{o}{=}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}int\PYGZbs{}int}\PYG{n+nb}{\PYGZus{}R }\PYG{n+nv}{\PYGZbs{}nabla\PYGZbs{}times\PYGZbs{}mathbf}\PYG{n+nb}{\PYGZob{}F\PYGZcb{} }\PYG{n+nv}{\PYGZbs{}cdot}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{},}\PYG{n+nb}{dR}
+\PYG{l+s}{\PYGZbs{}]}
+\end{Verbatim}
