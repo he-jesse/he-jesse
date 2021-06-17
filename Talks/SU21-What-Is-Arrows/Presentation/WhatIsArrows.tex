@@ -50,17 +50,22 @@
 
     \begin{enumerate}
         \item Unanimity (Pareto efficiency)
-        
-        If $a_i <_v a_j$ (that is, $a_i \leq_v a_j$ and $a_j \not\leq_v a_i$) for each $v \in V$, then $a_i \leq_F a_j$.
+        \begin{itemize}
+            \item<2-> If $a_i <_v a_j$ (that is, $a_i \leq_v a_j$ and $a_j \not\leq_v a_i$) for each $v \in V$, then $a_i \leq_F a_j$. 
+        \end{itemize}
 
         \item Independence of irrelevant alternatives (IIA)
+        \begin{itemize}
+            \item<3-> If $P = (\leq_v), P' = (\leq'_v) \in \mathcal{L}(A)^V$ such that for all $v \in V$, $a_i \leq_v a_j$
+            iff $a_i \leq'_v a_j$, then $a_i \leq_{F(P)} a_j$ iff $a_i \leq_{F(P')} a_j$.
+        \end{itemize}
         
-        If $P = (\leq_v), P' = (\leq'_v) \in \mathcal{L}(A)^V$ such that for all $v \in V$, $a_i \leq_v a_j$
-        iff $a_i \leq'_v a_j$, then $a_i \leq_{F(P)} a_j$ iff $a_i \leq_{F(P')} a_j$.
 
         \item Non-dictatorship
+        \begin{itemize}
+            \item<4-> There is no $v \in V$ such that for all $P \in \mathcal{L}(A)^V$, $a_i <_v a_j$ implies $a_i <_{F(P)} a_j$.
+        \end{itemize}
         
-        There is no $v \in V$ such that for all $P \in \mathcal{L}(A)^V$, $a_i <_v a_j$ implies $a_i <_{F(P)} a_j$.
     \end{enumerate}
 
 \end{frame}
@@ -173,7 +178,7 @@
     Let $U = \{u : a <_u b\}$ and $W = \{w : b <_w c\}$, and suppose $U, W \in \mathcal{U}$. Then $a < b$ and $b < c$, hence $a < b < c$.
     
     \pause
-    Then $U \cap W \subseteq \{v : a <_v c\}$, and $\{v : a <_v c\} \in \mathcal{U}$.
+    Then $U \cap W = \{ v : a <_v b <_v c\} \subseteq \{v : a <_v c\}$, and $\{v : a <_v c\} \in \mathcal{U}$.
 
     \pause
     It may be that $U \cap W = \{v : a <_v c\}$; as when
@@ -217,20 +222,23 @@
     \pause
     Our collection $\mathcal{U}$ of winning sets is a \emph{principal ultrafilter}.
 
+    \pause
+    What about a \emph{nonprincipal ultrafilter}?
+
 \end{frame}
 
 \begin{frame}
-    \frametitle{An alternate statement}
+    \frametitle{An alternate perspective}
 
-    Armed with this revelation, Arrow's theorem can be stated more generally:
+    Armed with this revelation, Arrow's theorem follows from the statement:
 
     \pause
-    \begin{theorem}[Arrow's Impossibility Theorem (Version 2)]
+    \begin{theorem}
         There are no nonprincipal ultrafilters on finite sets.
     \end{theorem}
 
     \pause
-    We could in fact create a nondictatorial Pareto IIA social welfare function by constructing a \emph{nonprincipal ultrafilter},
+    We could in fact create a nondictatorial Pareto IIA social welfare function by constructing a nonprincipal ultrafilter,
     provided we have infinite voters and the Axiom of Choice.
 
 \end{frame}
@@ -243,8 +251,8 @@
     It turns out that the social choice function $F$ is an \emph{ultraproduct}:
 
     \pause
-    Given an index set $I$, a family of ``structures'' (in our case, an ordered set) $(M_i)_{i \in I}$, and an ultrafilter $\mathcal{U}$ on $I$,
-    we define the equivalence relation $a \sim b$ if $\{i \in I : a_i = b_i\} \in \mathcal{U}$. Then the \emph{ultraproduct} is
+    Given an index set $I$, a family of ``structures'' (in our case, ordered sets) $(M_i)_{i \in I}$, and an ultrafilter $\mathcal{U}$ on $I$,
+    we define on $\prod_{i \in I} M_i$ the equivalence relation $a \sim b$ if $\{i \in I : a_i = b_i\} \in \mathcal{U}$. Then the \emph{ultraproduct} is
     the quotient structure $\prod_{i \in I} M_i / \sim$, sometimes written $\prod_{i \in I} M_i / \mathcal{U}$.
 
 \end{frame}
@@ -332,7 +340,7 @@
     We have the following commutative diagram:
     \begin{center}
         \begin{tikzcd}[ampersand replacement=\&]
-            V \arrow[r, "i_V", hook] \arrow[rd, "P"'] \& \mathit{\beta V} \arrow[d, "\mathit{\beta P}", dashed] \\
+            V \arrow[r, "i_V", hook] \arrow[rd, "P"'] \& \mathit{\beta V} \arrow[d, "\exists ! \mathit{\beta P}", dashed] \\
             \& \mathcal{L}(A)                                        
         \end{tikzcd}
     \end{center}
@@ -369,7 +377,7 @@
         By the previous fact, $\mathcal{U}_F$ has a unique limit $\hat{v} \in \mathit{\beta V}$.
         
         \pause
-        Then $\mathit{\beta P}(\hat{v}) = \mathcal{U_F}\lim_v P(v)$. Since $\mathcal{L}(A)$ is discrete, there is some
+        Then $\mathit{\beta P}(\hat{v}) = \mathcal{U}_F\lim_v P(v)$. Since $\mathcal{L}(A)$ is discrete, there is some
         $U \in \mathcal{U}_F$ with $P(U) = \mathit{\beta P}(\hat{v})$.
         
         \pause
