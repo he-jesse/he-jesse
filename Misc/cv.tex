@@ -1,9 +1,33 @@
 \documentclass[10pt]{moderncv}
 \usepackage[utf8]{inputenc}
-\usepackage[margins=1.0in]{geometry}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[backend=biber,sorting=ydnt]{biblatex}
 \recomputelengths
 \moderncvtheme[grey]{classic}
+\addbibresource{publications.bib}
 
+% Fix publication spacing
+% Audrey on tex.stackexchange https://tex.stackexchange.com/questions/123805/creating-bibliographies-with-biblatex-and-moderncv
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{% label format from numeric.bbx
+        \printfield{labelprefix}%
+        \printfield{labelnumber}}}
+     {\setlength{\topsep}{0pt}% layout parameters from moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+% Remove publication numbers
+% karlkoeller on tex.stackexchange at https://tex.stackexchange.com/questions/219935/remove-numbers-from-cv-bibliography-using-biblatex-in-texshop
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{0pt}
+
+% Personal info
 \firstname{Jesse}
 \familyname{He}
 \title{Curriculum Vitae}
@@ -13,70 +37,83 @@
 \nopagenumbers{}
 
 \begin{document}
+\makecvtitle
 
-\maketitle
 \section*{Education}
 
-\textbf{The Ohio State University}, Columbus, OH \hfill Expected graduation: Spring 2022
+\cventry{}{The Ohio State University}{}{Columbus, OH}{}{\textit{Expected May 2022}}
+\cvline{}{Bachelor of Science in Mathematics, Honors Specialization}
+\cvline{}{Bachelor of Arts in Computer and Information Science}
+\cvline{}{GPA: 3.876}
 
-Bachelor of Science, Honors Mathematics
+\section*{Research Experience}
 
-Bachelor of Arts, Computer and information Science
+\cventry{Summer 2021}{Emerging Issues in Cybersecurity REU}
+    {New Mexico Institute of Mining and Technology}
+    {Sorocco, NM (online)}{}{}
+    \cvlistitem{Advised by Dr. Subhasish Mazumdar, developed a tool to generate
+    synthetic tabular data with geometrically defined classes}
+    \cvlistitem{Investigated the behavior of machine learning explanation framework
+    LIME using generated synthetic tabular data}
 
-GPA: 3.876
+\nocite{*}
+\printbibliography[title={Publications}]
 
-\section*{Research}
+\section*{Conference Presentations}
 
-\textbf{Emerging Issues in Cybersecurity at New Mexico Tech} \hfill Summer 2021
-
-A National Science Foundation Research Experience for Undergraduates
+\cvline{}{``Using Polygonal Data Clusters to Investigate LIME,''
+    14th International Conference on Information Society (i-Society).
+    Dún Laoghaire, Ireland (virtual), October 2021.}
 
 \section*{Employment}
 
-\textbf{Ohio State University Deparment of Mathematics.}
+\cventry{Autumn 2021}{Student Grader, Math 5590H Honors Abstract Algebra I}
+    {The Ohio State University Department of Mathematics}{}{}{}
+    \cvlistitem{Graded weekly homework assignments for an honors undergraduate course in
+        abstract algebra, covering groups, rings, and polynomials}
 
-Undergraduate Grader, Math 5590H
-\hfill Autumn 2021
-\begin{itemize}
-    \item Graded weekly homework assignments for an honors undergraduate course in abstract algebra
-\end{itemize}
+\cventry{Autumn 2020-Spring 2021}{Undergraduate Grader, CSE 3521 Survey of Artificial Intelligence I}
+    {The Ohio State University Department of Computer Science and Engineering}{}{}{}
+    \cvlistitem{Evaluated and gave feedback for assignments in introductory artificial
+        intelligence including problem solving, knowledge representation, and machine learning}
+    \cvlistitem{Held regular office hours}
 
-\textbf{Ohio State University Deparment of Computer Science and Engineering.}
+\cventry{Spring 2020}{MMC Digital Sandbox Project Group Instructor}
+    {Ohio State University Media, Marketing, and Communications Scholars}{}{}{}
+    \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX}
+    \cvlistitem{Also served as a Professional Development Co-Curricular for
+    OSU's Second Year Transformational Project Program}
 
-Undergraduate Grader, CSE 2221, 3521
-\hfill Autumn 2019, Autumn 2020, Spring 2021
-\begin{itemize}
-    \item Evaluated and gave feedback for assignments in introductory software engineering and artificial intelligence
-    \item Assisted in-class lab instruction
-    \item Held regular office hours
-\end{itemize}
+\cventry{Autumn 2019}{Undergraduate Grader, CSE 2221}
+    {The Ohio State University Department of Computer Science and Engineering}{}{}{}
+    \cvlistitem{Graded assignments in an introductory software engineering course covering
+    design-by-contract principles, mathematical modeling of software functionality,
+    component-based software from client perspective, and layered data representation}
+    \cvlistitem{Aided lab instruction and held regular office hours}
 
-\textbf{Ohio State University Media, Marketing, and Communications Scholars.}
+\section*{Seminars}
 
-MMC Digital Sandbox Project Group Instructor
-\hfill Spring 2020
-\begin{itemize}
-    \item Developed and taught a 7-week project-based course in LaTeX
-\end{itemize}
+\cvline{What Is...?,\\ 17 June 2021}{``What Is Arrow's Impossibility Theorem?''}
+\cvline{Reading Classics,\\ 16 Feb. 2021}{``A History of Computational Linear Algebra:
+    The Theory of Tables of Numbers Through Time''}
+\cvline{Reading Classics,\\ 6 Oct. 2020}{``Tuning, Temperament, Timbre, and Twos:
+    Why Rectifying Resonant Ratios Requires Roots''}
+\cvline{Reading Classics,\\ 25 Feb. 2020}
+    {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions''}
 
-\section*{Colloquia and seminars}
+\section*{Technical Skills}
+\cvline{Programming}{Python, C, C++, C\#, Java, Javascript/HTML/CSS, Matlab}
+\cvline{Packages}{NumPy, Javaplex, PyTorch, Matplotlib}
+\cvline{Other}{Git, Microsoft Office, \LaTeX}
 
-\textit{What Is Arrow's Impossibility Theorem?}
-\newline \rightline{OSU What Is...?, 17 June 2021}
+\section*{Languages}
+\cvline{Mandarin}{Conversational}
+\cvline{Spanish}{Basic}
+\cvline{Japanese}{Basic}
 
-\textit{A History of Computational Linear Algebra: The Theory of Tables of Numbers Through Time}
-\newline \rightline{OSU Reading Classics, 16 February 2021}
-
-\textit{Tuning, Temperament, Timbre, and Twos: Why Rectifying Resonant Ratios Requires Roots}
-\newline \rightline{OSU Reading Classics, 6 October 2020}
-
-\textit{Deduced and Demonstrated Difficulties in Democratically Determining Decisions}
-\newline \rightline{OSU Reading Classics, 25 February 2020}
-
-% \section*{Activities}
-
-% \textbf{Radical Pi}, Member \hfill 2019-Present
-
-% \textbf{Buckeye Philharmonic Orchestra}, Member \hfill 2018-2020
+\section*{Interests}
+\cvline{Mathematics and Computing}{Topological Data Analysis, Algebraic and Differential Topology,
+    (Discrete) Morse Theory, Manifold Learning}
+\cvline{Other}{Computer and Electronic Music Synthesis, Music Theory and Composition, Cooking, Swimming}
 
 \end{document}
