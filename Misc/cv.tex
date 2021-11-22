@@ -1,10 +1,11 @@
 \documentclass[10pt]{moderncv}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=1.0in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 \usepackage[backend=biber,sorting=ydnt]{biblatex}
 \recomputelengths
 \moderncvtheme[grey]{classic}
 \addbibresource{publications.bib}
+
 
 % Fix publication spacing
 % Audrey on tex.stackexchange https://tex.stackexchange.com/questions/123805/creating-bibliographies-with-biblatex-and-moderncv
@@ -34,6 +35,7 @@
 \address{30 E Lane Ave. Apt. 106A}{Columbus, OH, 43201}
 \mobile{(419) 378-5584}
 \email{jessehe.inbox@gmail.com}
+\social[github]{he-jesse}
 \nopagenumbers{}
 
 \begin{document}
@@ -41,14 +43,14 @@
 
 \section*{Education}
 
-\cventry{}{The Ohio State University}{}{Columbus, OH}{}{\textit{Expected May 2022}}
+\cventry{}{The Ohio State University}{}{Columbus, OH}{}{Expected May 2022}
 \cvline{}{Bachelor of Science in Mathematics, Honors Specialization}
 \cvline{}{Bachelor of Arts in Computer and Information Science}
 \cvline{}{GPA: 3.876}
 
 \section*{Research Experience}
 
-\cventry{Summer 2021}{Emerging Issues in Cybersecurity REU}
+\cventry{SU2021}{Emerging Issues in Cybersecurity REU}
     {New Mexico Institute of Mining and Technology}
     {Sorocco, NM (online)}{}{}
     \cvlistitem{Advised by Dr. Subhasish Mazumdar, developed a tool to generate
@@ -59,61 +61,90 @@
 \nocite{*}
 \printbibliography[title={Publications}]
 
-\section*{Conference Presentations}
+\section*{Teaching Experience}
 
-\cvline{}{``Using Polygonal Data Clusters to Investigate LIME,''
-    14th International Conference on Information Society (i-Society).
-    Dún Laoghaire, Ireland (virtual), October 2021.}
-
-\section*{Employment}
-
-\cventry{Autumn 2021}{Student Grader, Math 5590H Honors Abstract Algebra I}
+\cventry{AU2021}{Student Grader, Math 5590H/5111: Honors Abstract Algebra I}
     {The Ohio State University Department of Mathematics}{}{}{}
-    \cvlistitem{Graded weekly homework assignments for an honors undergraduate course in
-        abstract algebra, covering groups, rings, and polynomials}
+    \cvlistitem{Graded weekly homework assignments for a combined honors undergraduate
+        and master's level course in abstract algebra covering groups, rings, and polynomials
+        using exercises from Dummit and Foote's \emph{Abstract Algebra}, Ch. 1-9.}
 
-\cventry{Autumn 2020-Spring 2021}{Undergraduate Grader, CSE 3521 Survey of Artificial Intelligence I}
+\cventry{AU2020-SP2021}{Undergraduate Grader, CSE 3521: Survey of Artificial Intelligence I}
     {The Ohio State University Department of Computer Science and Engineering}{}{}{}
     \cvlistitem{Evaluated and gave feedback for assignments in introductory artificial
         intelligence including problem solving, knowledge representation, and machine learning}
+    \cvlistitem{Spring 2021 worked for experimental section combining material from
+        AI II with greater emphasis on mathematical underpinnings of machine learning}
     \cvlistitem{Held regular office hours}
 
-\cventry{Spring 2020}{MMC Digital Sandbox Project Group Instructor}
+\cventry{SP2020}{MMC Digital Sandbox Project Group Instructor}
     {Ohio State University Media, Marketing, and Communications Scholars}{}{}{}
-    \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX}
+    \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX
+    which covered document structure, mathematical typesetting, and standard packages}
     \cvlistitem{Also served as a Professional Development Co-Curricular for
     OSU's Second Year Transformational Project Program}
 
-\cventry{Autumn 2019}{Undergraduate Grader, CSE 2221}
+\cventry{AU2019}{Undergraduate Grader, CSE 2221: Software Components}
     {The Ohio State University Department of Computer Science and Engineering}{}{}{}
     \cvlistitem{Graded assignments in an introductory software engineering course covering
     design-by-contract principles, mathematical modeling of software functionality,
     component-based software from client perspective, and layered data representation}
     \cvlistitem{Aided lab instruction and held regular office hours}
 
-\section*{Seminars}
+\section*{Presentations}
 
-\cvline{What Is...?,\\ 17 June 2021}{``What Is Arrow's Impossibility Theorem?''}
-\cvline{Reading Classics,\\ 16 Feb. 2021}{``A History of Computational Linear Algebra:
+\subsection*{Conference Presentations}
+
+\cvline{27 Oct. 2021}{``Using Polygonal Data Clusters to Investigate LIME,''
+    14th International Conference on Information Society (i-Society).
+    Dún Laoghaire, Ireland (virtual), October 2021.}
+
+\subsection*{Seminar Presentations}
+
+\cvline{\emph{What Is...?} SU2021}{``What Is Arrow's Impossibility Theorem?''}
+\cvline{\emph{Reading Classics} SP2021}{``A History of Computational Linear Algebra:
     The Theory of Tables of Numbers Through Time''}
-\cvline{Reading Classics,\\ 6 Oct. 2020}{``Tuning, Temperament, Timbre, and Twos:
+\cvline{\emph{Reading Classics} AU2020}{``Tuning, Temperament, Timbre, and Twos:
     Why Rectifying Resonant Ratios Requires Roots''}
-\cvline{Reading Classics,\\ 25 Feb. 2020}
+\cvline{\emph{Reading Classics} SP2020}
     {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions''}
+
+% \cvline{SU 2021}{``What Is Arrow's Impossibility Theorem?'' \hfill \emph{What Is...?} at OSU}
+% \cvline{SP 2021}{``A History of Computational Linear Algebra:
+%     The Theory of Tables of Numbers Through Time'' \hfill \emph{Reading Classics} at OSU}
+% \cvline{AU 2020}{``Tuning, Temperament, Timbre, and Twos:
+%     Why Rectifying Resonant Ratios Requires Roots'' \hfill \emph{Reading Classics} at OSU}
+% \cvline{SP 2020}
+%     {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions'' \hfill \emph{Reading Classics} at OSU}
+
+\section*{Selected Coursework}
+\subsection*{Mathematics}
+{\small
+\cvitemwithcomment{Math 7852}{Differential Topology II}{(Graduate, Planned)}
+\cvitemwithcomment{Math 6702}{Differential Geometry}{(Graduate, Planned)}
+\cvitemwithcomment{Math 6701}{Differentiable Manifolds}{(Graduate, In Progress)}
+\cvitem{Math 4570}{Applied Algebraic Topology}
+\cvitem{Math 4193}{Group Studies: Category Theory in Context}
+}
+\subsection*{Computer Science}
+{\small
+\cvitemwithcomment{CSE 5339}{Intermediate Studies in Algorithms: TDA in Neuroscience}{(Planned)}
+\cvitemwithcomment{CSE 6331}{Algorithms}{(Graduate, In Progress)}
+\cvitem{CSE 3321}{Automata and Formal Languages}
+\cvitem{CSE 3521}{Artificial Intelligence I}
+}
 
 \section*{Technical Skills}
 \cvline{Programming}{Python, C, C++, C\#, Java, Javascript/HTML/CSS, Matlab}
-\cvline{Packages}{NumPy, Javaplex, PyTorch, Matplotlib}
-\cvline{Other}{Git, Microsoft Office, \LaTeX}
+\cvline{Other}{Git, \LaTeX}
 
 \section*{Languages}
-\cvline{Mandarin}{Conversational}
-\cvline{Spanish}{Basic}
-\cvline{Japanese}{Basic}
+\cvdoubleitem{Mandarin}{Conversational}{Japanese}{Basic}
+\cvitem{Spanish}{Basic}
 
-\section*{Interests}
+\section*{Selected Interests}
 \cvline{Mathematics and Computing}{Topological Data Analysis, Algebraic and Differential Topology,
     (Discrete) Morse Theory, Manifold Learning}
-\cvline{Other}{Computer and Electronic Music Synthesis, Music Theory and Composition, Cooking, Swimming}
+\cvline{Other}{Digital Music Synthesis, Music Theory and Composition, Cooking, Swimming}
 
 \end{document}
