@@ -1,0 +1,121 @@
+\input{../preamble.tex}
+
+\lhead{Jesse He}
+\chead{\textbf{On Blowing Gabriel's Horn}}
+\rhead{\today}
+
+\begin{document}
+    
+\section{Introduction.}
+
+We are interested in the question of blowing Gabriel's horn,
+ignoring the practical difficulties of procuring an infinite amount
+of brass from which to fashion an infinitely large horn; in finding an
+infinitesimally small horn player to blow into the horn; in placing
+said infinitesimally small horn player infinitely far away so that they may
+reach the mouthpiece of the horn; and in sound travelling an infinite
+distance at finite speed.
+
+\subsection{Preliminaries.}
+
+We will begin with the following background from mathematics and physics.
+
+\subsubsection{Gabriel's Horn.}
+
+\emph{Gabriel's horn} (also \emph{Torricelli's trumpet}) is the solid
+of rotation given by rotating the graph of $y = 1/x$ about the
+$x$ axis for $x \geq 1$, first described by the Italian mathematician
+Evangelista Torricelli's 1643 paper \emph{De solido hyperbolico acuto}\footnote{``Gabriel's Horn,'' \emph{Wikipedia, the Free Encyclopedia}.
+At \url{https://en.wikipedia.org/wiki/Gabriel's_Horn}}.
+
+It is well-known to students of integral calculus that Gabriel's horn
+has finite volume but infinite surface area; indeed, the volume of
+Gabriel's horn is given by
+\[
+    V = \pi \int_1^\infty \left(\frac{1}{x}\right)^2 \,dx
+    = \lim_{a \to \infty} \pi\left(1 - \frac{1}{a}\right)
+    = \pi
+\]
+while the surface area is given by
+\[
+    A = 2\pi \int_1^\infty \frac{1}{x}\sqrt{1 + \left(-\frac{1}{x^2}\right)^2} \,dx
+    = \infty.
+\]
+
+\subsubsection{Webster's Horn Equation.}
+
+The behavior of an acoustic wave in a horn with varying cross-sectional area $S(x)$
+can be modeled by \emph{Webster's horn equation}\footnote{For a full derivation, see Section 4.2.3 of \emph{Euphonics: The Science of Musical Instruments}
+by Jim Woodhouse at \url{https://euphonics.org/}}
+\begin{equation}
+    \frac{\partial}{\partial x} \left( S(x)\frac{\partial p}{\partial x} \right)
+    = \frac{S}{c^2} \frac{\partial^2 p}{\partial t^2}
+\end{equation}
+where $c$ is the speed of sound and $p = p(x,t)$ is the \emph{sound pressure}, the
+variation in pressure from the standard pressure $p_0 = 14$psi at length $x$ and time $t$.
+
+\section{Blowing the Horn.}
+
+\subsection{Can You Blow the Horn?}
+
+Since the cross-section of the horn at $x$ is a circle of radius $r = 1/x$,
+we have
+\[
+    S(x) = \pi r^2 = \pi \frac{1}{x^2}
+\]
+and since we are interested in a harmonic sound wave, we let $\omega$ be the
+fundamental frequency of the the sound wave and so we may write Equation (1) as
+\[
+    \frac{d^2 \psi}{dx^2}
+    + \left(\frac{\omega^2}{c^2} - \frac{1}{r}\frac{d^2 r}{dx^2}\right)\psi = 0.
+\]
+
+Since Webster's horn equation describes the pressure from the mouthpiece of the horn to
+to the bell, it will be necessary to make the substitution $u = a - x$ and consider
+finite sections of the horn on $[1,a]$ before taking the limit as $a \to \infty$.
+Performing this change of variables yields
+\begin{equation}
+    \frac{d^2 \psi}{du^2} + \left(\frac{\omega^2}{c^2} - \frac{2}{u^2}\right)\psi = 0.
+\end{equation}
+Now, since the term in parentheses in Equation 2 is negative for $u$ small enough,
+it must be that any modes in the horn will fade before reaching the mouth of the horn
+and we can conclude, perhaps unsurprisingly, that were one to blow the horn, there would be
+no sound at the bell.
+
+\subsection{But What If You Could?}
+
+We have been thus far undeterred by the physical realities of horn playing,
+so there is no reason to be so deterred now.
+
+For simplicity, suppose $\omega^2/c^2 = 1$. Then the solution to this linear
+second-order ordinary differential equation is
+\[
+    \psi(u) = \sqrt{\frac{2}{\pi}}
+    \left(k_1\left(\frac{\sin u}{u} - \cos u\right)
+    - k_2\left(\sin u + \frac{\cos u}{u}\right)\right)
+\]
+which yields the pressure function
+\[
+    p(u) = \psi(u)S(u)^{-1/2} = \frac{\psi(u)}{\sqrt{\pi}(a-u)}.
+\]
+Now, $u$ is only defined for $u < a-1$, so the singularity at $u = a$ is of no consequence.
+
+We can elimiate the singularity at $u = 0$ if one of $k_1$ or $k_2$ is 0;
+for simplicity, suppose $k_1 = 1$ and suppose $k_2 = 0$ so that $p(0)$ is finite,
+since our infinitely small horn player may have difficulty producing an infinite
+pressure wave at the mouthpiece, and even if they were able to such an embochure
+would certainly be exhausting to maintain. This assumption will turn out to
+have little effect on the final result of the calculation far from the mouthpiece.
+
+We finally consider the simplified pressure function
+\[
+    p(u) = \frac{\sqrt{\frac{2}{\pi}}\left(\frac{\sin u}{u} - \cos u\right)}
+    {\sqrt{\pi}(a-u)}.
+\]
+At $u = a-1$, the very end of the horn, we have
+\[
+    p(a-1) = \frac{\sqrt{2}}{\pi}\left(\frac{\sin(1-a)}{1-a} - \cos(1-a)\right),
+\]
+which is bounded. Thus even taking $a \to \infty$, the sound would not be infinite.
+
+\end{document}

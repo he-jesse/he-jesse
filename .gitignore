@@ -1,0 +1,5 @@
+.vscode
+Misc/SsoP/**
+*.synctex.gz
+*.bcf
+*.run.xml
