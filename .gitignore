@@ -1,5 +1,6 @@
 .vscode
 Misc/SsoP/**
-*.synctex.gz
-*.bcf
-*.run.xml
+
+**/*.synctex.gz
+**/*.bcf
+**/*.run.xml
