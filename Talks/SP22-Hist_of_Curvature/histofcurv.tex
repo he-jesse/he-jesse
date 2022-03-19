@@ -8,6 +8,7 @@ intersections, pgfplots.fillbetween}
 \urlstyle{same}
 
 \addbibresource{histofcurv.bib}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \usetheme{Antibes}
 \usecolortheme{beaver}
@@ -80,7 +81,7 @@ intersections, pgfplots.fillbetween}
 \title{The History of Curvature}
 \author{Jesse He}
 \institute{OSU Reading Classics}
-\date{22 March, 2022 (John Marshall White III's Birthday Observed)}
+\date{22 March, 2022\\(John Marshall White III's Birthday Observed)}
 
 \begin{document}
     
@@ -95,7 +96,7 @@ intersections, pgfplots.fillbetween}
 
     Aristotle (384 - 322 BCE) made the astute observation that lines do not curve,
     but circles curve uniformly at each point. Thus, he classified
-    plane loci into three categories: linear, circular, and mixed. \cite{unsat-hist}
+    plane loci into three categories: linear, circular, and mixed \cite{unsat-hist}.
 
     Apollonius of Perga (c. 240 BCE - c. 190 BCE) made (implicitly) the first
     calculation of curvature when considering the problem of drawing normal
@@ -112,7 +113,7 @@ intersections, pgfplots.fillbetween}
     whose \textit{Tractatus de Configurationibus Qualitatum et Motuum} (Treatise
     on the Configurations of Qualities and Motions) contained the first characterization
     of \emph{Curvitas}, noting that the curvature of a circle is inversely proportional
-    to its radius. \cite{unsat-hist}
+    to its radius \cite{unsat-hist}.
 
     Attempting to generalize to other curves, Oresme stated that if two curves are tangent
     to a line at the same point from the same side, then the ``smaller'' of the two should
@@ -121,7 +122,7 @@ intersections, pgfplots.fillbetween}
     Oresme's \emph{Tractatus} also contained a number of other important discoveries,
     such as an early use of rectangular coordinates, a computation of geometric series,
     and is credited with the first proof of the divergence of the harmonic
-    series. \cite{sep-nicole-oresme}
+    series \cite{sep-nicole-oresme}.
 \end{frame}
 
 \section{Before Calculus}
@@ -132,13 +133,13 @@ intersections, pgfplots.fillbetween}
     \frametitle{Kepler's Circle of Curvature}
 
     Johannes Kepler (1571 - 1630) was the first to suggest approximating a curve by
-    its \emph{circle of curvature}, the ``closest'' circle to the curve at a point.
-    \cite{unsat-hist}
+    its \emph{circle of curvature}, the ``closest'' circle to the curve at a point
+    \cite{unsat-hist}.
 
     \begin{figure}
         \centering
         \includegraphics[width=.5\textwidth]{images/Osculating_circle.svg.png}
-        \caption{An osculating circle \cite{intern-et-al}}
+        \caption{An osculating circle \cite{intern-et-al}.}
     \end{figure}
 \end{frame}
 
@@ -171,7 +172,7 @@ intersections, pgfplots.fillbetween}
 
     Huygens calculated the radii of curvature for some special cases (notably the cycloid)
     and attempts to provide a general method, but was not aware of Newton's and Leibniz's
-    calculus and so failed to give a general solution. \cite{unsat-hist}
+    calculus and so failed to give a general solution \cite{unsat-hist}.
 \end{frame}
 
 \section{The Calculus of Differentiable Curves}
@@ -187,7 +188,7 @@ intersections, pgfplots.fillbetween}
     to 1727 despite his birth usually being listed exclusively by the Julian date.})
     used calculus to describe the center and radius of curvature for a curve at a point
     in Problem V of his posthumously published work \textit{The Method of Fluxions and Infinite
-    Series: with its Application to the Geometry of Curve-Lines}. \cite{newton}
+    Series: with its Application to the Geometry of Curve-Lines} \cite{newton}.
 
     Like Huygens and Kepler, Newton reduces the problem to finding the radius of the osculating
     circle.
@@ -219,7 +220,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Newton's Method of Fluxions (cont.)}
 
-    Newton then describes a general method for producing the center of convergence: \cite{newton}
+    Newton then describes a general method for producing the center of convergence \cite{newton}:
 
     \includegraphics[width=\textwidth]{images/newton-center-construction.png}
 
@@ -263,12 +264,12 @@ intersections, pgfplots.fillbetween}
 
     Gottfried Wilhelm Leibniz (1646 - 1716) is credited with the term ``osculating circle''
     (or \emph{Circulus Osculans}) in his 1686 paper \textit{Meditation Nova de Natura Anguli
-    Contactus et Osculi} (New Meditation on the Nature of Angles of Contact and Osculation).
-    \cite{unsat-hist}\cite{geom-diff-view}
+    Contactus et Osculi} (New Meditation on the Nature of Angles of Contact and Osculation)
+    \cite{unsat-hist,geom-diff-view}.
 
     Jacob Bernoulli (1655 - 1705) also worked on the curvature of general
-    curves, particularly in his general construction of evolutes from a curve:
-    the evolute of a curve $c(t)$ is given by
+    curves, particularly in his general construction of the evolute of a curve $c(t)$,
+    which is given by
     \[
         E(t) = c(t) + R(t)n(t)
     \]
@@ -304,7 +305,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Euler and the Second Derivative}
 
-    Leonhard Euler (1707 - 1783) proved the following in 1736: \cite{geom-diff-view}
+    Leonhard Euler (1707 - 1783) proved the following in 1736 \cite{geom-diff-view}:
 
     \begin{theorem}
         Let $\gamma(s)$ be parameterized by arc length. Then the (unsigned) curvature
@@ -315,25 +316,25 @@ intersections, pgfplots.fillbetween}
     \end{theorem}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Frenet and Serret}
+% \begin{frame}
+%     \frametitle{Frenet and Serret}
 
-    Jean Frédéric Frenet (1816 - 1900) and Joseph Alfred Serret (1819 - 1885)
-    derived the following formulas in 1847 and 1851:
+%     Jean Frédéric Frenet (1816 - 1900) and Joseph Alfred Serret (1819 - 1885)
+%     derived the following formulas in 1847 and 1851:
 
-    \begin{theorem}
-        Let $\gamma : [a,b] \to \R^3$ be parameterized by arc length, $T = \dot\gamma$,
-        $N = \frac{dT}{ds}/\norm{\frac{dT}{ds}}$, and $B = T \times N$;
-        denote the curvature by $\kappa$ and torsion by $\tau$. Then
-        \[
-            \frac{dT}{ds} = \kappa N, \
-            \frac{dN}{ds} = -\kappa T + \tau B, \
-            \frac{dB}{ds} = -\tau N.
-        \]
-    \end{theorem}
-    These are the \emph{Frenet-Serret formulas}, and together $T,N,B,\kappa,\tau$
-    (the \emph{Frenet-Serret apparatus}) specify $\gamma$ up to rigid motions of $\R^3$.
-\end{frame}
+%     \begin{theorem}
+%         Let $\gamma : [a,b] \to \R^3$ be parameterized by arc length, $T = \dot\gamma$,
+%         $N = \frac{dT}{ds}/\norm{\frac{dT}{ds}}$, and $B = T \times N$;
+%         denote the curvature by $\kappa$ and torsion by $\tau$. Then
+%         \[
+%             \frac{dT}{ds} = \kappa N, \
+%             \frac{dN}{ds} = -\kappa T + \tau B, \
+%             \frac{dB}{ds} = -\tau N.
+%         \]
+%     \end{theorem}
+%     These are the \emph{Frenet-Serret formulas}, and together $T,N,B,\kappa,\tau$
+%     (the \emph{Frenet-Serret apparatus}) specify $\gamma$ up to rigid motions of $\R^3$.
+% \end{frame}
 
 \section{Gauss's \emph{Theorema Egregium}}
 
@@ -347,7 +348,7 @@ intersections, pgfplots.fillbetween}
 
     However, the geometry of \emph{surfaces} emerges around Euler's 1760
     paper \textit{Recherches sur la courbure des surfaces} (Research on
-    the curvature of surfaces) \cite{geom-diff-view}, and will eventually
+    the curvature of surfaces) \cite{geom-diff-view,euler}, and will eventually
     lead to a result of Gauss which would inspire his student Riemann to
     found the modern theory which bears his name.
 
@@ -356,9 +357,92 @@ intersections, pgfplots.fillbetween}
 \subsection{Gaussian Curvature and the \emph{Theorema Egregium}}
 
 \begin{frame}
-    \frametitle{}
+    \frametitle{Surfaces in $\R^3$}
 
-    
+    \begin{definition}
+        A \emph{regular surface} $S$ is a subset $S \subset \R^3$ such that at each point
+        $p \in S$ there is an open neighborhood $p \in U \subset S$ with $V \subset \R^2$
+        and a homeomorphism $f : V \to U$ such that
+        \begin{itemize}
+            \item $f(u,v)$, as a function $f : V \to \R^3$ is smooth
+            \item for each $x \in V$, $\partial_u f$ and $\partial_v f$ are
+            linearly independent in $\R^3$.
+        \end{itemize}
+    \end{definition}
+
+    This definition using \emph{local charts} is equivalent
+    to the definition using \emph{Monge patches} (as locally the graph
+    of a smooth function $h : V \to \R$) and the definition using implicit functions;
+    this follows from the \emph{(generalized) implicit function theorem}.
+
+    We denote the \emph{tangent plane} to $S$ at $p$ by
+    \(
+        T_pS \coloneqq \Span\{\partial_uf,\partial_vf\}.
+    \)
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{The Darboux Frame}
+
+%     In a regular surface $S$, a curve $\gamma : [a,b] \to S$ has an associated
+%     \emph{Darboux frame}
+
+% \end{frame}
+
+\begin{frame}
+    \frametitle{Curvature(s) of a Surface}
+
+    Let $S \subset \R^3$ be a regular surface and consider \emph{normal planes}
+    $P_X$ to $S$ (which contain the normal vector $n$ and a vector $X$ tangent to
+    $S$ at $P$) which each specify a curve on $S$.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=.4\textwidth]{images/planes-of-curvature.png}
+        \caption{Planes of principal curvature at a saddle point of a surface.}
+    \end{figure}
+
+    Then the \emph{normal curvature} $\kappa_X$ of $S$ with respect to $P_X$
+    is the curvature of the unit speed curve whose image is $S \cap P_X$.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Euler and the Principal Curvature(s)}
+
+    \begin{theorem}[Euler, 1760]
+        Suppose $S$ is a regular surface with $p \in S$ such that $\kappa_X$
+        is not constant.
+
+        Then there are two unit tangent vectors $X_1, X_2 \in T_pS$ with
+        $k_1 = \kappa_{X_1} = \max_{X \in T_pS}\kappa_X$ and
+        $k_2 = \kappa_{X_2} = \min_{X \in T_pS}\kappa_X$
+        (the \emph{principal curvatures} of $S$ at $p$)
+        and that $X_1 \perp X_2$. Further, if $X \in T_pS$ is a unit vector
+        at angle $\theta$ with $X_1$, then
+        \[
+          \kappa_X = k_1\cos^2\theta + k_2\sin^2\theta.
+        \]
+    \end{theorem}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Gaussian Curvature and the \emph{Theorema Egregium}}
+
+    \begin{definition}
+        The \emph{Gaussian curvature} $K$ at $p$ is the product $K = k_1k_2$
+        of the principal curvatures.
+    \end{definition}
+
+    Carl Friedrich Gauss (1777 - 1855) proved that ``If a curved surface is developed
+    upon any other surface whatever, the measure of curvature in each point remains unchanged.''
+
+    In modern language,
+    \begin{theorem}[\emph{Theorema Egregium}; Gauss, 1827]
+        The Gaussian curvature $K$ of a regular surface $S$ is invariant under
+        local isometry.
+    \end{theorem}
 
 \end{frame}
 
@@ -370,7 +454,13 @@ intersections, pgfplots.fillbetween}
     the \emph{extrinsic} way in which it is embedded in Euclidean space.
 
     In addition, the search for a rigorous model of non-Euclidean geometry
-    led 
+    led to the discovery that the hyperbolic plane cannot be properly embedded
+    as a surface in $\R^3$.
+
+    Bernhard Riemann (1826 - 1866), in his 1854 \emph{Habilitationsvortag}
+    ``\emph{Ueber die Hypothesen, welche der Geometrie zu Grunde liegen}''
+    (On the Hypotheses which Lie at the Bases of Geometry) laid the groundwork
+    for what would become modern differential geometry \cite{geom-diff-view,riemann}.
 
 \end{frame}
 
@@ -436,7 +526,7 @@ intersections, pgfplots.fillbetween}
 \end{frame}
 
 \begin{frame}
-    \frametitle{The Levi-Civit\`{a} Connection}
+    \frametitle{The Levi-Civita Connection}
 
     \begin{definition}
         A \emph{connection} on $TM$ is a bilinear map
@@ -452,7 +542,7 @@ intersections, pgfplots.fillbetween}
     \end{definition}
     \begin{theorem}
         Every Riemannian manifold $(M,g)$ has a unique connection $\nabla$
-        (the \emph{Levi-Civit\`{a} connection}) which is
+        (the \emph{Levi-Civita connection}) which is
         \begin{enumerate}
             \item \textbf{Metric compatible:} $X(g(Y,Z)) = g(\nabla_XY,Z) + g(Y,\nabla_XZ)$
             \item \textbf{Torsion free:} $\nabla_XY - \nabla_YX = [X,Y]$.
@@ -546,7 +636,7 @@ intersections, pgfplots.fillbetween}
 
 \end{frame}
 
-\section{Model Spaces and $\CAT(k)$ Spaces}
+\section{Model Spaces and CAT$(k)$ Spaces}
 
 \subsection{Spaces of Constant Curvature}
 
@@ -596,12 +686,12 @@ intersections, pgfplots.fillbetween}
     \frametitle{The Model Spaces $\R^n$, $\Sp^n$, and $\Hy^n$}
 
     Scaling the unit sphere $\Sp^n$ and hyperbolic space $\Hy^n$, we can
-    actually obtain a space of constant sectional curvature $\kappa$ for any
-    $\kappa \in \R$; for $\kappa > 0$, the sphere $\Sp^n(\kappa^{-1/2})$ of radius
-    $\kappa^{-1/2}$ has constant curvature $\kappa$ and hyperbolic space
-    $\Hy^n(\kappa^{-1/2})$ has constant sectional curvature $-\kappa$.
+    actually obtain a space of constant sectional curvature $k$ for any
+    $k \in \R$; for $k > 0$, the sphere $\Sp^n(k^{-1/2})$ of radius
+    $k^{-1/2}$ has constant curvature $k$ and hyperbolic space
+    $\Hy^n(k^{-1/2})$ has constant sectional curvature $-k$.
 
-    We denote such manifolds by $M_\kappa^n$.
+    We denote such manifolds by $M_k^n$.
 
 \end{frame}
 
@@ -610,23 +700,76 @@ intersections, pgfplots.fillbetween}
 
     \begin{theorem}
         Any complete, connected, simply connected manifold $M$ of constant sectional
-        curvature $\kappa$ is isometric to the model space $M_\kappa^n$.
+        curvature $k$ is isometric to the model space $M_k^n$.
     \end{theorem}
 
     \begin{theorem}[Killing-Hopf]
-        Any complete, connected $n$-manifold $M$ with constant sectional curvature $\kappa$
-        (a so-called \emph{space form}) has universal cover $M_\kappa^n$.
-        That is, $M$ is a quotient of $M_\kappa^n$ by a free and properly discontinuous
+        Any complete, connected $n$-manifold $M$ with constant sectional curvature $k$
+        (a so-called \emph{space form}) has universal cover $M_k^n$.
+        That is, $M$ is a quotient of $M_k^n$ by a free and properly discontinuous
         group action.
     \end{theorem}
 \end{frame}
 
-\subsection{Hadamard and $\CAT(k)$ Spaces}
+\subsection{CAT$(k)$ Spaces}
 
 \begin{frame}
-    \frametitle{}
+    \frametitle{On Geodesic Metric Spaces}
 
-    
+    One interesting feature of spaces of constant curvature $k$ is the behavior
+    of (geodesic) triangles, and we can use this to introduce a notion of ``curvature''
+    in a more general setting.
+
+    \begin{definition}
+        Let $(X,d)$ be a metric space. A \emph{geodesic segment} is an arc-length parametrized
+        continuous curve $\gamma : [a,b] \to X$ such that
+        \[
+          d(x,y) = L(\gamma)
+          \coloneqq \sup\left\{\sum_{i=1}^r d(\gamma(t_{i-1}),\gamma(t_i))
+          \mid t_i \text{ partitions } [a,b] \right\}.
+        \]
+        where $x = \gamma(a)$ and $y = \gamma(b)$.
+
+        A metric space $(X,d)$ is said to be \emph{geodesic} if any $x, y \in X$ can be connected
+        by a geodesic segment.
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Triangles and the CAT$(k)$ Inequality}
+
+    Suppose $\Delta \subset X$ is a geodesic triangle with vertices $p,q,r$ and consider a
+    \emph{comparison triangle} $\Delta' \subset M_k^2$ with vertices $p',q',r'$ such that
+    $d(p,q) = d(p',q')$, $d(q,r) = d(q',r')$, and $d(r,p) = d(r',p')$.
+
+    Notice that each point $x \in \Delta$ has a corresponding point $x' \in \Delta'$.
+
+    $\Delta$ is said to satisfy the $\CAT(k)$
+    \emph{inequality} if for $x, y \in X$, $d_X(x,y) \leq d_{M^2_k}(x',y')$.
+
+    \begin{definition}
+        A geodesic metric space $(X,d)$ is said to be a $\CAT(k)$\footnote{$\CAT(k)$
+        was coined by Mikhail Gromov in 1987 as an acronym for Élie \textbf{C}artan,
+        Aleksandr Danilovich \textbf{A}leksandrov and Victor Andreevich \textbf{T}oponogov.
+        Aleksandrov originally called such spaces \emph{$\mathfrak{R}_k$ domains}.}
+        \emph{space} if every
+        geodesic triangle $\Delta \subset X$ with perimeter $\leq 2D_k$ satisfies the
+        $\CAT(k)$ inequality.
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{CAT$(k)$ Spaces and Curvature ``Bounded Above''}
+
+    \begin{definition}
+        We say that a (not necessarily geodesic) metric space $(X,d)$ has \emph{curvature $\leq k$}
+        if every point in $X$ has a geodesically convex $\CAT(k)$ neighborhood.
+    \end{definition}
+
+    An important case is the case $k = 0$, which was studied by Jacques Hadamard (1865 - 1963).
+    Complete $\CAT(0)$ spaces are sometimes called \emph{Hadamard spaces}.
 
 \end{frame}
 
@@ -635,6 +778,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{References}
 
+    \footnotesize
     \printbibliography
 
 \end{frame}
