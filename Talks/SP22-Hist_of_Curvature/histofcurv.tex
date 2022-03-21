@@ -1,4 +1,5 @@
-\documentclass{beamer}
+% \documentclass{beamer}
+\documentclass[handout]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[sorting=none]{biblatex}
 \usepackage{tipa, enumerate, parskip, fancyhdr, fmtcount, mathrsfs,
@@ -94,10 +95,12 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Lines Don't Curve; Circles Do}
 
+    \pause
     Aristotle (384 - 322 BCE) made the astute observation that lines do not curve,
     but circles curve uniformly at each point. Thus, he classified
     plane loci into three categories: linear, circular, and mixed \cite{unsat-hist}.
 
+    \pause
     Apollonius of Perga (c. 240 BCE - c. 190 BCE) made (implicitly) the first
     calculation of curvature when considering the problem of drawing normal
     segments to conic sections, recognizing that such a normal segment was unique.
@@ -109,16 +112,19 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Nicole Oresme}
 
+    \pause
     Nicole Oresme (c. 1320 - 1382) was a French philosopher in the Late Middle Ages
     whose \textit{Tractatus de Configurationibus Qualitatum et Motuum} (Treatise
     on the Configurations of Qualities and Motions) contained the first characterization
     of \emph{Curvitas}, noting that the curvature of a circle is inversely proportional
     to its radius \cite{unsat-hist}.
 
+    \pause
     Attempting to generalize to other curves, Oresme stated that if two curves are tangent
     to a line at the same point from the same side, then the ``smaller'' of the two should
     have more curvature than the larger.
 
+    \pause
     Oresme's \emph{Tractatus} also contained a number of other important discoveries,
     such as an early use of rectangular coordinates, a computation of geometric series,
     and is credited with the first proof of the divergence of the harmonic
@@ -132,10 +138,12 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Kepler's Circle of Curvature}
 
+    \pause
     Johannes Kepler (1571 - 1630) was the first to suggest approximating a curve by
     its \emph{circle of curvature}, the ``closest'' circle to the curve at a point
     \cite{unsat-hist}.
 
+    \pause
     \begin{figure}
         \centering
         \includegraphics[width=.5\textwidth]{images/Osculating_circle.svg.png}
@@ -146,12 +154,14 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Huygens' Construction}
 
+    \pause
     Christiaan Huygens (1629 - 1695) later gave a general way to produce the
     circle of curvature in 1673 in \textit{Horologium Oscillatorium: Sive de Motu Pendulorum
     ad Horologia Aptato Demonstrationes Geometricae}
     (The Pendulum Clock: or Geometrical Demonstrations Concerning the Motion of Pendula as
     Applied to Clocks) using involutes and evolutes.
 
+    \pause
     Begin with a curve (the \emph{evolute}) whose tangent lines are all on one side,
     and to this attach a flexible string which is pulled taught and then unwound,
     tracing the \emph{involute}.
@@ -164,12 +174,14 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Huygens' Construction (cont.)}
 
+    \pause
     The radius of curvature of the involute, then, is the distance up the string from
     the involute to the evolute. (Apollonius was unknowingly calculating this in the
     special case of conics.)
 
     Notice that this requires the \emph{evolute} of the curve to be given in advance.
 
+    \pause
     Huygens calculated the radii of curvature for some special cases (notably the cycloid)
     and attempts to provide a general method, but was not aware of Newton's and Leibniz's
     calculus and so failed to give a general solution \cite{unsat-hist}.
@@ -182,6 +194,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Newton's Method of Fluxions}
 
+    \pause
     Isaac Newton (1642 - 1727\footnote{Newton died in 1726 according to the Julian calendar,
     but in 1727 according the the Gregorian calendar; since England had not yet adopted the
     Gregorian calendar, Newton's death was recorded as being in 1726 but is usually adjusted
@@ -241,6 +254,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Newton's Method of Fluxions (cont.)}
 
+    \pause
     Using his construction, Newton goes on to show that putting $x = AB$ with
     $\dot{x} = 1$ and $y = BD$ with $z = \dot{y}$ in the following figure \cite{newton}
     the radius of convergence is given by
@@ -253,6 +267,7 @@ intersections, pgfplots.fillbetween}
         \centering
         \includegraphics[width=.8\textwidth]{images/newton-formula-derivation.png}
     \end{minipage}
+    \pause
     In modern notation, the radius of curvature of a plane curve $y = y(x)$ is
     \[
         R = \abs{\frac{(1+y'(x)^2)^{3/2}}{y''(x)}}.
@@ -262,11 +277,13 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Newton's Contemporaries}
 
+    \pause
     Gottfried Wilhelm Leibniz (1646 - 1716) is credited with the term ``osculating circle''
     (or \emph{Circulus Osculans}) in his 1686 paper \textit{Meditation Nova de Natura Anguli
     Contactus et Osculi} (New Meditation on the Nature of Angles of Contact and Osculation)
     \cite{unsat-hist,geom-diff-view}.
 
+    \pause
     Jacob Bernoulli (1655 - 1705) also worked on the curvature of general
     curves, particularly in his general construction of the evolute of a curve $c(t)$,
     which is given by
@@ -276,6 +293,7 @@ intersections, pgfplots.fillbetween}
     where $R(t)$ is the radius of curvature at $c(t)$ and $n(t)$ is the unit normal
     vector towards the center of curvature.
 
+    \pause
     Johann Bernoulli (1667 - 1748) also studied curvature, including the radius of curvature
     of a curve in polar coordinates.
 
@@ -286,14 +304,17 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Parameterization by Arc Length}
 
+    \pause
     Recall that the length of a smooth curve $\gamma : [a,b] \to \R^n$ is given by
     \[
         L(\gamma) = \int_a^b \norm{\dot\gamma(t)} \,dt.
     \]
+    \pause
     Then the \emph{arc length} of $\gamma$ is the function
     \[
         s(t) = \int_a^t \norm{\dot\gamma(t)} \,dt.
     \]
+    \pause
     This is a smooth bijection from $[a,b]$ to $[0,L(\gamma)]$. Writing $t(s)$ for the inverse
     we have the \emph{arc length parameterization} of $\gamma$ by
     \[
@@ -305,8 +326,10 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Euler and the Second Derivative}
 
+    \pause
     Leonhard Euler (1707 - 1783) proved the following in 1736 \cite{geom-diff-view}:
 
+    \pause
     \begin{theorem}
         Let $\gamma(s)$ be parameterized by arc length. Then the (unsigned) curvature
         $\kappa$ is given by the magnitude of the acceleration:
@@ -343,9 +366,11 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Surfaces}
 
+    \pause
     Thus far, we have seen mostly the theory of curves; first in the plane,
     then a generalization in Euclidean 3-space.
 
+    \pause
     However, the geometry of \emph{surfaces} emerges around Euler's 1760
     paper \textit{Recherches sur la courbure des surfaces} (Research on
     the curvature of surfaces) \cite{geom-diff-view,euler}, and will eventually
@@ -359,6 +384,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Surfaces in $\R^3$}
 
+    \pause
     \begin{definition}
         A \emph{regular surface} $S$ is a subset $S \subset \R^3$ such that at each point
         $p \in S$ there is an open neighborhood $p \in U \subset S$ with $V \subset \R^2$
@@ -370,11 +396,13 @@ intersections, pgfplots.fillbetween}
         \end{itemize}
     \end{definition}
 
+    \pause
     This definition using \emph{local charts} is equivalent
     to the definition using \emph{Monge patches} (as locally the graph
     of a smooth function $h : V \to \R$) and the definition using implicit functions;
     this follows from the \emph{(generalized) implicit function theorem}.
 
+    \pause
     We denote the \emph{tangent plane} to $S$ at $p$ by
     \(
         T_pS \coloneqq \Span\{\partial_uf,\partial_vf\}.
@@ -392,6 +420,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Curvature(s) of a Surface}
 
+    \pause
     Let $S \subset \R^3$ be a regular surface and consider \emph{normal planes}
     $P_X$ to $S$ (which contain the normal vector $n$ and a vector $X$ tangent to
     $S$ at $P$) which each specify a curve on $S$.
@@ -402,6 +431,7 @@ intersections, pgfplots.fillbetween}
         \caption{Planes of principal curvature at a saddle point of a surface.}
     \end{figure}
 
+    \pause
     Then the \emph{normal curvature} $\kappa_X$ of $S$ with respect to $P_X$
     is the curvature of the unit speed curve whose image is $S \cap P_X$.
 
@@ -410,6 +440,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Euler and the Principal Curvature(s)}
 
+    \pause
     \begin{theorem}[Euler, 1760]
         Suppose $S$ is a regular surface with $p \in S$ such that $\kappa_X$
         is not constant.
@@ -420,6 +451,7 @@ intersections, pgfplots.fillbetween}
         (the \emph{principal curvatures} of $S$ at $p$)
         and that $X_1 \perp X_2$. Further, if $X \in T_pS$ is a unit vector
         at angle $\theta$ with $X_1$, then
+        \pause
         \[
           \kappa_X = k_1\cos^2\theta + k_2\sin^2\theta.
         \]
@@ -430,14 +462,17 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Gaussian Curvature and the \emph{Theorema Egregium}}
 
+    \pause
     \begin{definition}
         The \emph{Gaussian curvature} $K$ at $p$ is the product $K = k_1k_2$
         of the principal curvatures.
     \end{definition}
 
+    \pause
     Carl Friedrich Gauss (1777 - 1855) proved that ``If a curved surface is developed
     upon any other surface whatever, the measure of curvature in each point remains unchanged.''
 
+    \pause
     In modern language,
     \begin{theorem}[\emph{Theorema Egregium}; Gauss, 1827]
         The Gaussian curvature $K$ of a regular surface $S$ is invariant under
@@ -449,14 +484,17 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Riemann's \textit{Habilitationsvortag}}
 
+    \pause
     Gauss's \emph{Theorema Egregium} suggests that curvature can
     be studied as an \emph{intrinsic} property of a surface rather than
     the \emph{extrinsic} way in which it is embedded in Euclidean space.
 
+    \pause
     In addition, the search for a rigorous model of non-Euclidean geometry
     led to the discovery that the hyperbolic plane cannot be properly embedded
     as a surface in $\R^3$.
 
+    \pause
     Bernhard Riemann (1826 - 1866), in his 1854 \emph{Habilitationsvortag}
     ``\emph{Ueber die Hypothesen, welche der Geometrie zu Grunde liegen}''
     (On the Hypotheses which Lie at the Bases of Geometry) laid the groundwork
@@ -591,6 +629,7 @@ intersections, pgfplots.fillbetween}
         of $\End(T_pM)$ generated by $R(v,w)$ for $v, w \in T_pM$.
     \end{theorem}
 
+    \pause
     Holonomy also gives rise to the remarkable De Rham Decomposition theorem (1952),
     which states roughly that holonomy can be used to locally decompose a simply
     connected manifold as the product of ``nice'' submanifolds, and further that
@@ -620,6 +659,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Sectional Curvature}
 
+    \pause
     \begin{definition}
         Given two linearly independent vectors $u, v \in T_pM$, the \emph{sectional curvature}
         is given by
@@ -628,9 +668,11 @@ intersections, pgfplots.fillbetween}
         \]
     \end{definition}
 
+    \pause
     It can be shown that the Riemannian curvature tensor can be recovered from the
     sectional curvature.
 
+    \pause
     Notice that in the case $\dim M = 2$, the (unique) sectional curvature of $M$ is the
     Gaussian curvature.
 
@@ -643,6 +685,7 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Isotropic and Constant Sectional Curvature}
 
+    \pause
     \begin{definition}
         If the sectional curvature $K$ of $M$ is at each point independent of the
         choice of $u,v$ then $M$ is said to be \emph{isotropic}. If in addition
@@ -650,10 +693,12 @@ intersections, pgfplots.fillbetween}
         \emph{constant sectional curvature}.
     \end{definition}
 
+    \pause
     \begin{lemma}[(Friedrich) Schur]
         An isotropic connected manifold of dimension $> 2$ has constant sectional curvature.
     \end{lemma}
 
+    \pause
     Of particular interest in Riemannian geometry are the so-called
     \emph{model spaces} $\R^n$, $\Sp^n$, and $\Hy^n$, which have constant
     sectional curvature 0, 1, and $-1$, respectively.
@@ -665,11 +710,13 @@ intersections, pgfplots.fillbetween}
 
     Consider standard Euclidean space with the usual inner product $(\R^n, g^{\can})$.
 
+    \pause
     Now, in $(\R^{n+1}, g^{\can})$ denote by $\Sp^n$ the usual unit sphere
     \[
       \Sp^n \coloneqq \{x \in \R^{n+1} \mid \norm{x} = 1\}.
     \]
 
+    \pause
     Consider now $\R^{n,1}$, which is $\R^n$ with the \emph{Lorentzian} form
     \[
         g^{\Lor}(x,y) = \left(\sum_{i=1}^n x_i y_i\right) - x_{n+1}y_{n+1}
@@ -685,12 +732,14 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{The Model Spaces $\R^n$, $\Sp^n$, and $\Hy^n$}
 
+    \pause
     Scaling the unit sphere $\Sp^n$ and hyperbolic space $\Hy^n$, we can
     actually obtain a space of constant sectional curvature $k$ for any
     $k \in \R$; for $k > 0$, the sphere $\Sp^n(k^{-1/2})$ of radius
     $k^{-1/2}$ has constant curvature $k$ and hyperbolic space
     $\Hy^n(k^{-1/2})$ has constant sectional curvature $-k$.
 
+    \pause
     We denote such manifolds by $M_k^n$.
 
 \end{frame}
@@ -698,11 +747,13 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Theorems on the Model Spaces}
 
+    \pause
     \begin{theorem}
         Any complete, connected, simply connected manifold $M$ of constant sectional
         curvature $k$ is isometric to the model space $M_k^n$.
     \end{theorem}
 
+    \pause
     \begin{theorem}[Killing-Hopf]
         Any complete, connected $n$-manifold $M$ with constant sectional curvature $k$
         (a so-called \emph{space form}) has universal cover $M_k^n$.
@@ -716,10 +767,12 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{On Geodesic Metric Spaces}
 
+    \pause
     One interesting feature of spaces of constant curvature $k$ is the behavior
     of (geodesic) triangles, and we can use this to introduce a notion of ``curvature''
     in a more general setting.
 
+    \pause
     \begin{definition}
         Let $(X,d)$ be a metric space. A \emph{geodesic segment} is an arc-length parametrized
         continuous curve $\gamma : [a,b] \to X$ such that
@@ -730,6 +783,7 @@ intersections, pgfplots.fillbetween}
         \]
         where $x = \gamma(a)$ and $y = \gamma(b)$.
 
+        \pause
         A metric space $(X,d)$ is said to be \emph{geodesic} if any $x, y \in X$ can be connected
         by a geodesic segment.
     \end{definition}
@@ -739,15 +793,18 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{Triangles and the CAT$(k)$ Inequality}
 
+    \pause
     Suppose $\Delta \subset X$ is a geodesic triangle with vertices $p,q,r$ and consider a
     \emph{comparison triangle} $\Delta' \subset M_k^2$ with vertices $p',q',r'$ such that
     $d(p,q) = d(p',q')$, $d(q,r) = d(q',r')$, and $d(r,p) = d(r',p')$.
 
     Notice that each point $x \in \Delta$ has a corresponding point $x' \in \Delta'$.
 
+    \pause
     $\Delta$ is said to satisfy the $\CAT(k)$
     \emph{inequality} if for $x, y \in X$, $d_X(x,y) \leq d_{M^2_k}(x',y')$.
 
+    \pause
     \begin{definition}
         A geodesic metric space $(X,d)$ is said to be a $\CAT(k)$ \emph{space}\footnote{$\CAT(k)$
         was coined by Mikhail Gromov in 1987 as an acronym for Élie \textbf{C}artan,
@@ -762,11 +819,13 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{CAT$(k)$ Spaces and Curvature ``Bounded Above''}
 
+    \pause
     \begin{definition}
         We say that a (not necessarily geodesic) metric space $(X,d)$ has \emph{curvature $\leq k$}
         if every point in $X$ has a geodesically convex $\CAT(k)$ neighborhood.
     \end{definition}
 
+    \pause
     An important case is the case $k = 0$, which was studied by Jacques Hadamard (1865 - 1963).
     Complete $\CAT(0)$ spaces are sometimes called \emph{Hadamard spaces}.
 
@@ -777,7 +836,6 @@ intersections, pgfplots.fillbetween}
 \begin{frame}
     \frametitle{References}
 
-    \footnotesize
     \printbibliography
 
 \end{frame}
