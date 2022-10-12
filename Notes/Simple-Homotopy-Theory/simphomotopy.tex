@@ -1,0 +1,39 @@
+\input{../preamble.tex}
+\usepackage{csquotes}
+% \usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
+% \bibliography{simphomotopy}
+
+\usepackage{scalerel,stmaryrd}
+% https://tex.stackexchange.com/questions/484215/how-to-type-this-arrow-in-math-mode
+\newsavebox\wedgearrowbaseline
+\savebox\wedgearrowbaseline{$\scalerel{%
+    \ooalign{/\cr/}\mkern-8.5mu}{\ssearrow}$}
+\newcommand{\wedgearrow}{\mathrel{\scalerel*{%
+    \usebox{\wedgearrowbaseline}}{X}}} %stmaryrd
+
+\newcommand{\seleadsto}{\mathrel{\rotatebox[origin=c]{-45}{$\leadsto$}}}
+
+\lhead{Jesse He}
+\chead{\textbf{Notes on Simple Homotopy Theory}}
+\rhead{\today}
+
+\begin{document}
+    
+\section*{Notation}
+
+\begin{tabular}[ht]{rl}
+    $I$ & the unit interval $[0,1]$ \\
+    $1_X$ & the identity function on a space $X$ \\
+    $f \simeq g$ & functions $f, g : X \to Y$ are homotopic \\
+    $X \simeq Y$ & spaces $X$ and $Y$ are homotopy equivalent \\
+    $Y \seleadsto X$ & $Y$ collapses to $X$ \\
+    $K \searrow L$ & $K$ collapses (cellularly) to $L$ \\
+    $L \nearrow K$ & $L$ expands (cellularly) to $K$ \\
+    $K \searrow^s L$ & $K$ collapses (simplicially) to $L$ \\
+    $L \nearrow^s K$ & $L$ expands (simplicially) to $K$ \\
+    $K \searrow^e L$ & $K$ collapses to $L$ by an elementary collapse \\
+    $L \nearrow^e K$ & $L$ expands to $K$ by an elementary expansion \\
+    $K \wedgearrow L$ & $K$ and $L$ have the same simple homotopy type \\
+\end{tabular}
+
+\end{document}

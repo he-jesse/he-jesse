@@ -7,7 +7,7 @@
 % https://tex.stackexchange.com/questions/484215/how-to-type-this-arrow-in-math-mode
 \newsavebox\wedgearrowbaseline
 \savebox\wedgearrowbaseline{$\scalerel{%
-    \ooalign{Kern.05pt/\cr/}\mkern-8.5mu}{\ssearrow}$}
+    \ooalign{/\cr/}\mkern-8.5mu}{\ssearrow}$}
 \newcommand{\wedgearrow}{\mathrel{\scalerel*{%
     \usebox{\wedgearrowbaseline}}{X}}} %stmaryrd
 
