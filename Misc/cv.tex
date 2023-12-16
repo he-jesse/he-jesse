@@ -1,6 +1,6 @@
 \documentclass[10pt]{moderncv}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage[backend=bibtex,sorting=ydnt]{biblatex}
 \recomputelengths
 \moderncvtheme[grey]{classic}
@@ -23,6 +23,31 @@
   {\endlist}
   {\item}
 
+% cvtripleitem command
+% Gonzalo Medina on tex.stackexchange.com https://tex.stackexchange.com/questions/171909/how-to-implement-cvtripleitem-in-moderncv
+
+\newlength\Tripleitemmaincolumnwidth
+\newlength\tripleitemmaincolumnwidth
+
+\AtBeginDocument{%
+\setlength\tripleitemmaincolumnwidth{% 
+  \maincolumnwidth-2\hintscolumnwidth-2\separatorcolumnwidth}%
+\setlength\tripleitemmaincolumnwidth{.333333\tripleitemmaincolumnwidth}%   
+}
+\newcommand*{\cvtripleitem}[7][.25em]{%
+\cvitem[#1]{#2}{%
+    \begin{minipage}[t]{\tripleitemmaincolumnwidth}#3\end{minipage}%
+    \hfill
+    \begin{minipage}[t]{\hintscolumnwidth}\raggedleft\hintstyle{#4}\end{minipage}%
+    \hspace*{\separatorcolumnwidth}%
+    \begin{minipage}[t]{\tripleitemmaincolumnwidth}#5\end{minipage}%
+    \hfill
+    \begin{minipage}[t]{\hintscolumnwidth}\raggedleft\hintstyle{#6}\end{minipage}%
+    \hspace*{\separatorcolumnwidth}%
+    \begin{minipage}[t]{\tripleitemmaincolumnwidth}#7\end{minipage}%
+    }%
+ }
+
 % Remove publication numbers
 % karlkoeller on tex.stackexchange at https://tex.stackexchange.com/questions/219935/remove-numbers-from-cv-bibliography-using-biblatex-in-texshop
 \DeclareFieldFormat{labelnumberwidth}{}
@@ -32,8 +57,9 @@
 \firstname{Jesse}
 \familyname{He}
 \title{Curriculum Vitae}
-\address{30 E Lane Ave. Apt. 106A}{Columbus, OH, 43201}
+% \address{3869 Miramar St. # 3024}{La Jolla, CA, 92092}
 \mobile{(419) 378-5584}
+\email{jeh020@ucsd.edu}
 \email{jessehe.inbox@gmail.com}
 \social[github]{he-jesse}
 \nopagenumbers{}
@@ -44,82 +70,99 @@
 \section*{Education}
 
 \cventry{}{UC San Diego, Halıcıoğlu Data Science Institute}{}{San Diego, California}{}{}
-\cvline{}{PhD Student}
+\cvline{}{PhD Student, Advised by Profs. Yusu Wang, Gal Mishne}
+% \cvline{}{Advised by Profs. Yusu Wang, Gal Mishne}
 
 \cventry{}{The Ohio State University}{}{Columbus, OH}{}{}
-\cvline{}{Bachelor of Science in Mathematics, Honors Specialization, \textit{magna cum laude} \hfill May 2022}
-\cvline{}{Bachelor of Arts in Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
+\cvline{}{B.S. Mathematics; B.A. Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
+% \cvline{}{Bachelor of Arts in Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
 % \cvline{}{GPA: 3.894}
 
 \section*{Research Experience}
 
+\cventry{SU2023-Present}{Graduate Student Researcher}
+    {UC San Diego}{San Diego, CA}{}{Advised by Profs. Yusu Wang, Gal Mishne}
+
 \cventry{SU2021}{Emerging Issues in Cybersecurity REU}
-    {New Mexico Institute of Mining and Technology}
-    {Sorocco, NM (online)}{}{}
-    \cvlistitem{Advised by Dr. Subhasish Mazumdar}
+    {New Mexico Tech}
+    {Sorocco, NM (online)}{}{Advised by Prof. Subhasish Mazumdar}
     % , developed a tool to generate
     % synthetic tabular data with geometrically defined classes}
     % \cvlistitem{Investigated the behavior of machine learning explanation framework
     % LIME using generated synthetic tabular data}
+
+\section*{Research Interests}
+\cvline{}{
+    My research interests lie in using geometric and topological techniques
+    to analyze, visualise, and interpret complex data, including manifold learning,
+    topological data analysis, and explainable and interpretable geometric deep learning.
+}    
 
 \nocite{*}
 \printbibliography[title={Publications}]
 
 \section*{Teaching Experience}
 
-\cventry{AU2021-SP2022}{Undergraduate Grader, Math 5590H/5111: Honors Abstract Algebra I,
-    Math 5591H/5112: Honors Abstract Algebra II}{}{}{}{}
+\subsection*{Graduate Teaching Assistant}
+
+\cventry{WI 2024}{DSC 206: Algorithms for Data Science}{}{}{}{}
+\cvline{}{UC San Diego, Halıcıoğlu Data Science Institute}
+
+\subsection*{Undergraduate Grader}
+
+\cventry{AU2021-SP2022}{Math 5590H/5111, Math 5591H/5112: Honors Abstract Algebra I, II}{}{}{}{}
 \cvline{}{The Ohio State University Department of Mathematics}
-    \cvlistitem{Graded weekly homework assignments for a combined honors undergraduate
-        and master's level sequence in abstract algebra covering groups, rings, polynomials,
-        modules, and Galois theory using Dummit and Foote's \emph{Abstract Algebra}, Ch. 1-14.}
+    % \cvlistitem{Graded weekly homework assignments for a combined honors undergraduate
+    %     and master's level sequence in abstract algebra covering groups, rings, polynomials,
+    %     modules, and Galois theory using Dummit and Foote's \emph{Abstract Algebra}, Ch. 1-14.}
 
 % \cventry{SP2022}{Student Grader, Math 3345H: Honors Foundations of Higher Mathematics}
 %     {The Ohio State University Department of Mathematics}{}{}{}
 %     \cvlistitem{Graded weekly homework assignments for an honors undergraduate
 %         course in proof writing and mathematical foundations.}
 
-\cventry{AU2020-SP2021}{Undergraduate Grader, CSE 3521: Survey of Artificial Intelligence I}{}{}{}{}
+\cventry{AU2020-SP2021}{CSE 3521: Survey of Artificial Intelligence I}{}{}{}{}
 \cvline{}{The Ohio State University Department of Computer Science and Engineering}
-    \cvlistitem{Evaluated and gave feedback for assignments in introductory artificial
-        intelligence including problem solving, knowledge representation, and machine learning}
-    \cvlistitem{Spring 2021 worked for experimental section combining material from
-        AI II with greater emphasis on mathematical underpinnings of machine learning}
-    \cvlistitem{Held regular office hours}
+    % \cvlistitem{Evaluated and gave feedback for assignments in introductory artificial
+    %     intelligence including problem solving, knowledge representation, and machine learning}
+    % \cvlistitem{Spring 2021 worked for experimental section combining material from
+    %     AI II with greater emphasis on mathematical underpinnings of machine learning}
+    % \cvlistitem{Held regular office hours}
 
+\cventry{AU2019}{CSE 2221: Software Components}{}{}{}{}
+\cvline{}{The Ohio State University Department of Computer Science and Engineering}
+    % \cvlistitem{Graded assignments in an introductory software engineering course covering
+    % design-by-contract principles, mathematical modeling of software functionality,
+    % component-based software from client perspective, and layered data representation}
+    % \cvlistitem{Aided lab instruction and held regular office hours}
+
+\subsection*{Other}
 \cventry{SP2020}{MMC Digital Sandbox Project Group Instructor}{}{}{}{}
 \cvline{}{Ohio State University Media, Marketing, and Communications Scholars}
-    \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX
-    which covered document structure, mathematical typesetting, and standard packages}
-    \cvlistitem{Also served as a Professional Development Co-Curricular for
-    OSU's Second Year Transformational Project Program}
+    % \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX
+    % which covered document structure, mathematical typesetting, and standard packages}
+    % \cvlistitem{Also served as a Professional Development Co-Curricular for
+    % OSU's Second Year Transformational Project Program}
 
-\cventry{AU2019}{Undergraduate Grader, CSE 2221: Software Components}{}{}{}{}
-\cvline{}{The Ohio State University Department of Computer Science and Engineering}
-    \cvlistitem{Graded assignments in an introductory software engineering course covering
-    design-by-contract principles, mathematical modeling of software functionality,
-    component-based software from client perspective, and layered data representation}
-    \cvlistitem{Aided lab instruction and held regular office hours}
+% \newpage
+% \section*{Presentations}
 
-\newpage
-\section*{Presentations}
+% \subsection*{Conference Presentations}
 
-\subsection*{Conference Presentations}
+% \cvline{27 Oct. 2021}{``Using Polygonal Data Clusters to Investigate LIME,''
+%     14th International Conference on Information Society (i-Society).
+%     Dún Laoghaire, Ireland (virtual), October 2021.}
 
-\cvline{27 Oct. 2021}{``Using Polygonal Data Clusters to Investigate LIME,''
-    14th International Conference on Information Society (i-Society).
-    Dún Laoghaire, Ireland (virtual), October 2021.}
+% \subsection*{Seminar Presentations}
 
-\subsection*{Seminar Presentations}
-
-\cvline{\emph{Reading Classics} SP2022}{``A History of Curvature''}
-\cvline{\emph{What Is...?} SU2021}{``What Is Arrow's Impossibility Theorem?''}
-\cvline{\emph{Reading Classics} SP2021}{``A History of Computational Linear Algebra:
-    The Theory of Tables of Numbers Through Time''}
-\cvline{\emph{Reading Classics} AU2020}{``Tuning, Temperament, Timbre, and Twos:
-    Why Rectifying Resonant Ratios Requires Roots''}
-\cvline{\emph{Reading Classics} SP2020}
-    {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions''}
+% \cvline{\emph{Reading Classics} SP2022}{``A History of Curvature''}
+% \cvline{\emph{What Is...?} SU2021}{``What Is Arrow's Impossibility Theorem?''}
+% \cvline{\emph{Reading Classics} SP2021}{``A History of Computational Linear Algebra:
+%     The Theory of Tables of Numbers Through Time''}
+% \cvline{\emph{Reading Classics} AU2020}{``Tuning, Temperament, Timbre, and Twos:
+%     Why Rectifying Resonant Ratios Requires Roots''}
+% \cvline{\emph{Reading Classics} SP2020}
+%     {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions''}
 
 % \section*{Selected Coursework}
 % \subsection*{Mathematics}
@@ -139,17 +182,16 @@
 % \cvitem{CSE 3521}{Artificial Intelligence I}
 % }
 
-\section*{Technical Skills}
-\cvline{Programming}{Python, C, C++, C\#, Java, Javascript/HTML/CSS, Matlab}
-\cvline{Other}{Git, \LaTeX}
+\section*{Skills}
+\cvline{Programming}{Python, Matlab, R, C, C++, C\#, Java}
+\cvline{Other}{Git, \LaTeX, Max/MSP/Jitter, Cockos REAPER}
 
 \section*{Languages}
-\cvdoubleitem{Mandarin}{Conversational}{Japanese}{Basic}
-\cvitem{Spanish}{Basic}
+\cvtripleitem{Mandarin}{Conversational}{Japanese}{Basic}{Spanish}{Basic}
 
-\section*{Selected Interests}
-\cvline{Mathematics and Computing}{Topological and Geometric Data Analysis, Algebraic and Differential Topology,
-    (Discrete) Morse Theory, Manifold Learning and Nonlinear Dimensionality Reduction}
-\cvline{Other}{Digital Music Synthesis, Music Theory and Composition, Cooking, Swimming}
+\section*{Other Interests}
+% \cvline{Data Science}{Interpretable Graph Learning,
+% Manifold Learning, Topological Data Analysis}
+\cvline{}{Digital Music Synthesis, Music Theory and Composition}
 
 \end{document}
