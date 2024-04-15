@@ -3,9 +3,9 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage[backend=bibtex,sorting=ydnt]{biblatex}
 \recomputelengths
-\moderncvtheme[grey]{classic}
+\moderncvtheme[blue]{classic}
 \addbibresource{publications.bib}
-
+\setlength{\hintscolumnwidth}{2.5cm}
 
 % Fix publication spacing
 % Audrey on tex.stackexchange https://tex.stackexchange.com/questions/123805/creating-bibliographies-with-biblatex-and-moderncv
@@ -57,11 +57,18 @@
 \firstname{Jesse}
 \familyname{He}
 \title{Curriculum Vitae}
-% \address{3869 Miramar St. # 3024}{La Jolla, CA, 92092}
+\address{HDSI 432, 3234 Matthews Lane}{La Jolla, CA, 92093}
 \mobile{(419) 378-5584}
-\email{jeh020@ucsd.edu}
-\email{jessehe.inbox@gmail.com}
-\social[github]{he-jesse}
+\let\myemaillink\emaillink
+\let\myemailsymbol\emailsymbol
+\renewcommand{\emaillink}[1]{#1}
+\renewcommand{\emailsymbol}{}
+\email{
+  \myemailsymbol \myemaillink{jeh020@ucsd.edu} \\
+  \myemailsymbol \myemaillink{jessehe.inbox@gmail.com} \\
+}
+% \social[github]{he-jesse}
+\homepage{he-jesse.github.io}
 \nopagenumbers{}
 
 \begin{document}
@@ -69,80 +76,66 @@
 
 \section*{Education}
 
-\cventry{}{UC San Diego, Halıcıoğlu Data Science Institute}{}{San Diego, California}{}{}
+\cventry{}{Halıcıoğlu Data Science Institute, UC San Diego}{}{San Diego, California}{}{}
 \cvline{}{PhD Student, Advised by Profs. Yusu Wang, Gal Mishne}
 % \cvline{}{Advised by Profs. Yusu Wang, Gal Mishne}
 
 \cventry{}{The Ohio State University}{}{Columbus, OH}{}{}
-\cvline{}{B.S. Mathematics; B.A. Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
-% \cvline{}{Bachelor of Arts in Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
+\cvline{}{Bachelor of Science in Mathematics (Honors), \textit{magna cum laude} \hfill May 2022}
+\cvline{}{Bachelor of Arts in Computer and Information Science, \textit{magna cum laude} \hfill May 2022}
 % \cvline{}{GPA: 3.894}
-
-\section*{Research Experience}
-
-\cventry{SU2023-Present}{Graduate Student Researcher}
-    {UC San Diego}{San Diego, CA}{}{Advised by Profs. Yusu Wang, Gal Mishne}
-
-\cventry{SU2021}{Emerging Issues in Cybersecurity REU}
-    {New Mexico Tech}
-    {Sorocco, NM (online)}{}{Advised by Prof. Subhasish Mazumdar}
-    % , developed a tool to generate
-    % synthetic tabular data with geometrically defined classes}
-    % \cvlistitem{Investigated the behavior of machine learning explanation framework
-    % LIME using generated synthetic tabular data}
 
 \section*{Research Interests}
 \cvline{}{
     My research interests lie in using geometric and topological techniques
-    to analyze, visualise, and interpret complex data, including manifold learning,
-    topological data analysis, and explainable and interpretable geometric deep learning.
+    to interpret complex data, including manifold learning,
+    topological data analysis, and explainable geometric deep learning.
 }    
 
 \nocite{*}
 \printbibliography[title={Publications}]
 
-\section*{Teaching Experience}
+\section*{Employment}
 
-\subsection*{Graduate Teaching Assistant}
+\subsection*{Research}
 
-\cventry{WI 2024}{DSC 206: Algorithms for Data Science}{}{}{}{}
-\cvline{}{UC San Diego, Halıcıoğlu Data Science Institute}
+\cventry{SU2024}{National Security Internship, AI and Data Analytics}
+    {Pacific Northwest National Laboratory}
+    {Richland, WA (online)}{}{Supervised by Dr. Henry Kvinge}
 
-\subsection*{Undergraduate Grader}
 
-\cventry{AU2021-SP2022}{Math 5590H/5111, Math 5591H/5112: Honors Abstract Algebra I, II}{}{}{}{}
-\cvline{}{The Ohio State University Department of Mathematics}
-    % \cvlistitem{Graded weekly homework assignments for a combined honors undergraduate
-    %     and master's level sequence in abstract algebra covering groups, rings, polynomials,
-    %     modules, and Galois theory using Dummit and Foote's \emph{Abstract Algebra}, Ch. 1-14.}
+\cventry{SU2021}{Emerging Issues in Cybersecurity REU}
+    {New Mexico Tech}
+    {Sorocco, NM (online)}{}{Supervised by Prof. Subhasish Mazumdar}
 
-% \cventry{SP2022}{Student Grader, Math 3345H: Honors Foundations of Higher Mathematics}
-%     {The Ohio State University Department of Mathematics}{}{}{}
-%     \cvlistitem{Graded weekly homework assignments for an honors undergraduate
-%         course in proof writing and mathematical foundations.}
+\subsection*{Teaching}
 
-\cventry{AU2020-SP2021}{CSE 3521: Survey of Artificial Intelligence I}{}{}{}{}
-\cvline{}{The Ohio State University Department of Computer Science and Engineering}
-    % \cvlistitem{Evaluated and gave feedback for assignments in introductory artificial
-    %     intelligence including problem solving, knowledge representation, and machine learning}
-    % \cvlistitem{Spring 2021 worked for experimental section combining material from
-    %     AI II with greater emphasis on mathematical underpinnings of machine learning}
-    % \cvlistitem{Held regular office hours}
+\cventry{}{Graduate Teaching Assistant}
+    {UC San Diego, Halıcıoğlu Data Science Institute}{}{}{}
+\cvline{WI 2024}{DSC 206: Algorithms for Data Science}
 
-\cventry{AU2019}{CSE 2221: Software Components}{}{}{}{}
-\cvline{}{The Ohio State University Department of Computer Science and Engineering}
-    % \cvlistitem{Graded assignments in an introductory software engineering course covering
-    % design-by-contract principles, mathematical modeling of software functionality,
-    % component-based software from client perspective, and layered data representation}
-    % \cvlistitem{Aided lab instruction and held regular office hours}
+\cventry{}{Undergraduate Grader}
+    {The Ohio State University Department of Mathematics}{}{}{}
 
-\subsection*{Other}
-\cventry{SP2020}{MMC Digital Sandbox Project Group Instructor}{}{}{}{}
-\cvline{}{Ohio State University Media, Marketing, and Communications Scholars}
-    % \cvlistitem{Developed and taught a 7-week project-based course in \LaTeX
-    % which covered document structure, mathematical typesetting, and standard packages}
-    % \cvlistitem{Also served as a Professional Development Co-Curricular for
-    % OSU's Second Year Transformational Project Program}
+\cvline{SP2022}{Math 3345H: Honors Foundations of Higher Mathematics}
+\cvline{SP2022}{Math 5591H/5112: Honors Abstract Algebra II}
+\cvline{AU2021}{Math 5590H/5111: Honors Abstract Algebra I}
+\cventry{}{Undergraduate Grader}
+    {The Ohio State University Department of Computer Science and Engineering}{}{}{}
+\cvline{AU2020-SP2021}{CSE 3521: Survey of Artificial Intelligence I}
+\cvline{AU2019}{CSE 2221: Software Components}
+
+\cventry{}{Digital Sandbox Project Group Instructor}
+    {The Ohio State University Media, Marketing, and Communications Scholars}{}{}{}
+\cvline{SP2020}{Introduction to \LaTeX}
+
+\section*{Awards}
+
+\cvline{}{Qualcomm Innovation Fellowship 2024 Finalist}
+
+% \section*{Service}
+
+% \cvline{}{Add service once I have e.g. reviewed conference submissions or been on a student committee}
 
 % \newpage
 % \section*{Presentations}
@@ -164,24 +157,6 @@
 % \cvline{\emph{Reading Classics} SP2020}
 %     {``Deduced and Demonstrated Difficulties in Democratically Determining Decisions''}
 
-% \section*{Selected Coursework}
-% \subsection*{Mathematics}
-% {\small
-% \cvitemwithcomment{Math 7852}{Differential Topology II}{(Graduate)}
-% \cvitemwithcomment{Math 6802}{Algebraic Topology II}{(Graduate)}
-% \cvitemwithcomment{Math 6702}{Differential Geometry}{(Graduate)}
-% \cvitemwithcomment{Math 6701}{Differentiable Manifolds}{(Graduate)}
-% \cvitem{Math 4570}{Applied Algebraic Topology}
-% \cvitem{Math 4193}{Individual Studies: Category Theory in Context}
-% }
-% \subsection*{Computer Science}
-% {\small
-% \cvitem{CSE 5339}{Intermediate Studies in Algorithms: TDA in Neuroscience}
-% \cvitemwithcomment{CSE 6331}{Algorithms}{(Graduate)}
-% \cvitem{CSE 3321}{Automata and Formal Languages}
-% \cvitem{CSE 3521}{Artificial Intelligence I}
-% }
-
 \section*{Skills}
 \cvline{Programming}{Python, Matlab, R, C, C++, C\#, Java}
 \cvline{Other}{Git, \LaTeX, Max/MSP/Jitter, Cockos REAPER}
@@ -189,9 +164,9 @@
 \section*{Languages}
 \cvtripleitem{Mandarin}{Conversational}{Japanese}{Basic}{Spanish}{Basic}
 
-\section*{Other Interests}
-% \cvline{Data Science}{Interpretable Graph Learning,
-% Manifold Learning, Topological Data Analysis}
-\cvline{}{Digital Music Synthesis, Music Theory and Composition}
+% \section*{Other Interests}
+% % \cvline{Data Science}{Interpretable Graph Learning,
+% % Manifold Learning, Topological Data Analysis}
+% \cvline{}{Digital Music Synthesis, Music Theory and Composition}
 
 \end{document}
